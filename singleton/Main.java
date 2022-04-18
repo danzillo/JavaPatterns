@@ -1,4 +1,4 @@
-package competition;
+package singleton;
 
 
 class Main {

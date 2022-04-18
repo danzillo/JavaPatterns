@@ -1,6 +1,4 @@
-package competition;
-
-import java.util.Date;
+package singleton;
 
 
 public class DbConnection {
