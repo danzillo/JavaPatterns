@@ -4,8 +4,8 @@ package mediator;
 public abstract class User {
     private Mediator mediator;
 
-    public User(Mediator mediator) {
-        this.mediator = mediator;
+    public User(Mediator m) {
+       m = mediator;
     }
 
     //устанваливает имя пользователя через медиатор
