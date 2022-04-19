@@ -4,8 +4,8 @@ package mediator;
 public abstract class User {
     private Mediator mediator;
 
-    public User(Mediator m) {
-       m = mediator;
+    public void User(Mediator m) {
+        m = mediator;
     }
 
     //устанваливает имя пользователя через медиатор
@@ -17,5 +17,6 @@ public abstract class User {
     public Mediator getMediator() {
         return mediator;
     }
+
     public abstract void receive(String name);
 }
