@@ -10,6 +10,7 @@ public class UserMediator implements Mediator {
 //    private Sportsman sport1;
     private List<User> sportsman;
     private List<User> organizer;
+    private List<User> allUser;
     private String statusOrg = "Organizer";
     private String statusSport = "Sportsman";
 
@@ -22,26 +23,28 @@ public class UserMediator implements Mediator {
 //    }
 
     public UserMediator() {
+        this.allUser = new ArrayList<>();
         this.sportsman = new ArrayList<>();
         this.organizer = new ArrayList<>();
     }
 
     @Override
     public void addUser(User user) {
-    this.sportsman.add(user);
-    this.organizer.add(user);
+        this.allUser.add(user);
     }
 
     @Override
-    public void userStatus(User user, String status) {
-        if(status==statusOrg){
-            this.sportsman.add(user);
-            System.out.println("Пользователь добавлен в список организаторов");
-        }
-        else if (status==statusSport){
+    public void sendUserStatus(User user, String status) {
+        if (status == statusOrg) {
             this.organizer.add(user);
-            System.out.println("Пользователь добавлен в список спортсменов"+organizer);
+            System.out.println("Добавлен в список организаторов" + organizer);
+        } else if (status == statusSport) {
+            this.sportsman.add(user);
+            System.out.println("Добавлен в список спортсменов" + sportsman);
+        } else {
+            this.allUser.add(user);
+            System.out.println("неизвестный пользователь" + allUser);
         }
-        else System.out.println("неизвестный пользователь");
     }
 }
+

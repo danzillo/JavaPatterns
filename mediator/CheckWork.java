@@ -3,13 +3,15 @@ package mediator;
 //проверяем работу медиатора
 public class CheckWork {
     public static void main(String[] args) {
-        String statusSport = "Sportsman";
         Mediator mediator = new UserMediator();
-        User org = new Organizer(mediator);
+        User org = new Organizer(mediator, "Organizer");
         User sport = new Sportsman(mediator, "Sportsman");
-        mediator.addUser(sport);
+        User sport2 = new Sportsman(mediator, "Man");
         mediator.addUser(org);
-        mediator.userStatus(org,"Sportsman");
-        //sport.sendSt("Sportsman");
+        mediator.addUser(sport);
+        mediator.addUser(sport2);
+        org.sendSt(org.status);
+        sport.sendSt(sport.status);
+        sport.sendSt(sport2.status);
     }
 }
