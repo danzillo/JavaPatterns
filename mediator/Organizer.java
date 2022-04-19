@@ -1,8 +1,15 @@
 package mediator;
 
 public class Organizer extends User{
-    public Organizer(Mediator m) {
-        super(m);
+    private String statusOrg = "Organizer";
+
+    public Organizer(Mediator mediator) {
+        super();
+    }
+
+    @Override
+    public void sendSt(String status) {
+
     }
 
     @Override
