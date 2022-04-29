@@ -1,9 +1,9 @@
 package factory;
 
 //для удобства выбора типов соревнований
-public enum ChampType {
+public enum CompType {
     RUSSIANFEDIRATIONTNG,
-    RUSSIANFEDIRATIONWORLDCHAMP,
+    RUSSIANFEDIRATIONWORLDCOMP,
     TOMSKFEDIRATIONTNG,
-    TOMSKFEDIRATIONLOCLCHAMP
+    TOMSKFEDIRATIONLOCLCOMP
 }
