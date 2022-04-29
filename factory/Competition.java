@@ -1,6 +1,6 @@
 package factory;
 
-public class Competition {
+public abstract class Competition {
     public void addDiscription(){
         //для добасвления описания
     }
