@@ -11,7 +11,7 @@ public abstract class Site {
         comp.addSportsmanList();
         comp.addMap();
 
-        System.out.println("Соренование создано.");
+        //System.out.println("Соренование создано");
         return comp;
     }
 }

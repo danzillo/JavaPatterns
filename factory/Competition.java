@@ -1,4 +1,5 @@
 package factory;
+
 //абстратный класс -> будет 2 разных семейства
 // соренований для местных федераций и мировых
 public abstract class Competition {
@@ -12,5 +13,9 @@ public abstract class Competition {
 
     public void addMap(){
         //для добавления карты соревнований
+    }
+
+    public String type(String typeName){
+        return typeName;
     }
 }
