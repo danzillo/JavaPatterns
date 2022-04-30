@@ -1,6 +1,8 @@
 package proxy;
 
 public class ProxyMap implements MapImage {
+
+    //поле класса map
     private Map realMap;
     private String fileName;
 
