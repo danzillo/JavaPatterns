@@ -8,6 +8,8 @@ public class ProxyMap implements MapImage {
         this.fileName = fileName;
     }
 
+/*    Если карта не загружена, то загружаем ее
+            по имени файла, и только потом демонстрируем ее*/
     @Override
     public void display() {
         if(realMap == null){
