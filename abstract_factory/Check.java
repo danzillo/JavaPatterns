@@ -1,98 +1,29 @@
 package abstract_factory;
 
+//проверка работы фабрики
 public class Check {
-
     public static void main(String[] args) {
+        ChampFactory factory1 = new LocalFactory();
+        Discription discription1 = factory1.createDiscription();
+        List list1 = factory1.createList();
+        Map map1 = factory1.createMap();
 
-        AbstractFactory factory1 = new ConcreteFactory1();
-        Client client1 = new Client(factory1);
-        client1.execute();
+        System.out.println("Создаем треировочный старт");
+        discription1.addDicription();
+        list1.addList();
+        map1.addMap();
 
-        AbstractFactory factory2 = new ConcreteFactory2();
-        Client client2 = new Client(factory2);
-        client2.execute();
+        ChampFactory factory2 = new WorldFactory();
+        Discription discription2 = factory2.createDiscription();
+        List list2 = factory2.createList();
+        Map map2 = factory2.createMap();
+
+        System.out.println("\nСоздаем старт ЧМ");
+        discription2.addDicription();
+        list2.addList();
+        map2.addMap();
+        //ChampFactory factory2 = new WorldFactory();
+
+
     }
-}
-
-class Client {
-    private AbstractProductA productA;
-    private AbstractProductB productB;
-
-    Client(AbstractFactory factory) {
-        productA = factory.createProductA();
-        productB = factory.createProductB();
-    }
-
-    void execute() {
-        productB.interact(productA);
-    }
-}
-
-interface AbstractFactory {
-    AbstractProductA createProductA();
-    AbstractProductB createProductB();
-}
-
-interface AbstractProductA {
-    void interact(AbstractProductB b);
-}
-
-interface AbstractProductB {
-    void interact(AbstractProductA a);
-}
-
-class ConcreteFactory1 implements AbstractFactory {
-
-    @Override
-    public AbstractProductA createProductA() {
-        return new ProductA1();
-    }
-    @Override
-    public AbstractProductB createProductB() {
-        return new ProductB1();
-    }
-}
-
-class ConcreteFactory2 implements AbstractFactory {
-
-    @Override
-    public AbstractProductA createProductA() {
-        return new ProductA2();
-    }
-    @Override
-    public AbstractProductB createProductB() {
-        return new ProductB2();
-    }
-}
-
-class ProductA1 implements AbstractProductA {
-    @Override
-    public void interact(AbstractProductB b) {
-        System.out.println(this.getClass().getName() + " interacts with " + b.getClass().getName());
-    }
-}
-
-class ProductB1 implements AbstractProductB {
-
-    @Override
-    public void interact(AbstractProductA a) {
-        System.out.println(this.getClass().getName() + " interacts with " + a.getClass().getName());
-    }
-
-}
-
-class ProductA2 implements AbstractProductA {
-    @Override
-    public void interact(AbstractProductB b) {
-        System.out.println(this.getClass().getName() + " interacts with " + b.getClass().getName());
-    }
-}
-
-class ProductB2 implements AbstractProductB {
-
-    @Override
-    public void interact(AbstractProductA a) {
-        System.out.println(this.getClass().getName() + " interacts with " + a.getClass().getName());
-    }
-
 }
